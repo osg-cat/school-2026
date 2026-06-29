@@ -9,6 +9,8 @@ All School participants and staff are encourage to attend!
 
 ## July 13 (Monday)
 
+**Location:** Room **TBD**, [Morgridge Hall](https://maps.wisc.edu/s/bh7h7git)
+
 <table>
   <thead>
     <tr>
@@ -125,6 +127,8 @@ All School participants and staff are encourage to attend!
 
 ## July 14 (Tuesday)
 
+**Location:** Room **TBD**, [Morgridge Hall](https://maps.wisc.edu/s/bh7h7git)
+
 <table>
   <thead>
     <tr>
@@ -220,6 +224,8 @@ All School participants and staff are encourage to attend!
 
 ## July 15 (Wednesday)
 
+**Location:** Room **TBD**, [Morgridge Hall](https://maps.wisc.edu/s/bh7h7git)
+
 <table>
   <thead>
     <tr>
@@ -304,6 +310,8 @@ All School participants and staff are encourage to attend!
 </table>
 
 ## July 16 (Thursday)
+
+**Location:** Room **TBD**, [Morgridge Hall](https://maps.wisc.edu/s/bh7h7git)
 
 <table>
   <thead>
@@ -396,6 +404,8 @@ All School participants and staff are encourage to attend!
 </table>
 
 ## July 17 (Friday)
+
+**Location:** Room **TBD**, [Morgridge Hall](https://maps.wisc.edu/s/bh7h7git)
 
 <table>
   <thead>
