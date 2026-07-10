@@ -82,7 +82,8 @@
 ## Troubleshooting
 
 !!! abstract "Troubleshooting Slides"
-	View the Slides: [pdf](troubleshooting/files/OSGUS2025_troubleshooting.pdf) [ppt](troubleshooting/files/OSGUS2025_troubleshooting.pptx)
+	<!-- View the Slides: [pdf](troubleshooting/files/OSGUS2025_troubleshooting.pdf) [ppt](troubleshooting/files/OSGUS2025_troubleshooting.pptx) -->
+	View the slides: **TBD**
 
 !!! note "Troubleshooting Exercises"
 	- [Exercise 1.1: Troubleshooting Jobs](troubleshooting/part1-ex1-troubleshooting.md)
