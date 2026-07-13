@@ -71,6 +71,10 @@ Let’s see how it works:
     -   Pass 1 million (`1000000`) as the command line argument to `mcpi.py`
     -   Make sure to include `log`, `output`, and `error` (with filenames like `mcpi.log`), and `request_*` lines
     -   At the end of the file, write `queue 3` instead of just `queue` ("queue 3 jobs" vs. "queue a job").
+    -   Add this line to run it inside of a container for a consistent software environment. We'll talk about containers on Tuesday!
+        ```
+        container_image = /cvmfs/singularity.opensciencegrid.org/htc/ubuntu:24.04
+        ```
 1.  Submit the file. Note the slightly different message from `condor_submit`:
 
         :::console
