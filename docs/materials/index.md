@@ -11,7 +11,7 @@
 ## Intro to HTCondor Job Execution
 
 !!! abstract "HTCondor: Introductory Slides"
-	- View the slides: [coming soon]()
+	- View the slides: [pdf](htcondor/files/osgus26-htc-htcondor.pdf)
 
 !!! note "Exercises: Intro to HTCondor"
 	- [Exercise 1.1: Log in to the local submit machine and look around](htcondor/part1-ex1-login.md)
@@ -24,7 +24,7 @@
 	- [Bonus Exercise 1.8: Explore `condor_status`](htcondor/part1-ex8-status.md)
 
 !!! abstract "HTCondor Multiple Job Slides"
-	View the Slides: [coming soon]()
+	View the Slides: [pdf](htcondor/files/osgus26-htc-htcondor-multiple-jobs.pdf)
 
 !!! note "Exercises: Running Many HTC Jobs" 
 	- [Exercise 2.1: Work with input and output files](htcondor/part2-ex1-files.md)
