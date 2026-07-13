@@ -165,21 +165,21 @@ In an HTCondor submit file, the program (or 'executable') name goes in the `exec
 
 `multiply.sh` is the *executable* and `1 2 3` are the *arguments*.
 
-In the submit file, we can specify this in two ways. View the two examples in the tabs.
+In the submit file, we can specify this in two ways.
 
-=== "Option 1: Using `shell`"
+**Option 1:** Using `shell`
 
-    ``` file
-    shell = ./multiply.sh 1 2 3
-    transfer_input_files = multiply.sh
-    ```
+``` file
+shell = ./multiply.sh 1 2 3
+transfer_input_files = multiply.sh
+```
 
-=== "Option 2: Using `executable` and `arguments`"
+**Option 2:** Using `executable` and `arguments`
 
-    ``` file
-    executable = multiply.sh
-    arguments = 1 2 3
-    ```
+``` file
+executable = multiply.sh
+arguments = 1 2 3
+```
 
 * Note that the `shell` example is written *exactly* how you might execute the task on your own computer. You *must* transfer the executable script using `transfer_input_files`, if you use this option.
 
