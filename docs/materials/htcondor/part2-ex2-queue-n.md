@@ -145,7 +145,7 @@ Let’s see how this works for our program that estimates π.
 1.  Delete any standard output, standard error, and log files from previous runs.
 1.  Submit the updated file.
 
-When all three jobs are finished, examine the resulting files again.
+When all ten jobs are finished, examine the resulting files again.
 
 -   How many files are there of each type? What are their names?
 -   Is this what you expected? Is it what you wanted from the π estimation process?
