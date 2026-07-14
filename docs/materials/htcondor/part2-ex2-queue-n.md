@@ -71,6 +71,10 @@ Let’s see how it works:
     -   Pass 1 million (`1000000`) as the command line argument to `mcpi.py`
     -   Make sure to include `log`, `output`, and `error` (with filenames like `mcpi.log`), and `request_*` lines
     -   At the end of the file, write `queue 3` instead of just `queue` ("queue 3 jobs" vs. "queue a job").
+    -   Add this line to run it inside of a container for a consistent software environment. We'll talk about containers on Tuesday!
+        ```
+        container_image = /cvmfs/singularity.opensciencegrid.org/htc/ubuntu:24.04
+        ```
 1.  Submit the file. Note the slightly different message from `condor_submit`:
 
         :::console
@@ -141,7 +145,7 @@ Let’s see how this works for our program that estimates π.
 1.  Delete any standard output, standard error, and log files from previous runs.
 1.  Submit the updated file.
 
-When all three jobs are finished, examine the resulting files again.
+When all ten jobs are finished, examine the resulting files again.
 
 -   How many files are there of each type? What are their names?
 -   Is this what you expected? Is it what you wanted from the π estimation process?
