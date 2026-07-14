@@ -32,7 +32,7 @@ Setup
 - For this exercise, we will use a container of the `blastx` named `blastx.sif`. Download the container using the following command
 
 ```
-user@ap40 $ osdf object get /ospool/uc-shared/public/school/2025/blast.sif .
+user@ap40 $ osdf object get /osg-public/school/2026/blast.sif .
 ```  
 
 .. TODO: Add a short recipe for creating a container from the `blastx` binaries, so that users can create their own containers if they want to.

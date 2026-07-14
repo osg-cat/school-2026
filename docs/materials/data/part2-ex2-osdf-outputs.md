@@ -21,8 +21,8 @@ Setup
 - Create a folder named `minimap2-read` and `cd` into it.
 - Download the required files for this lesson:
 
-        osdf object get /ospool/uc-shared/public/school/2025/minimap2.sif .
-        osdf object get /ospool/uc-shared/public/school/2025/Celegans_ref.fa .
+        osdf object get /osg-public/school/2026/minimap2.sif .
+        osdf object get /osg-public/school/2026/Celegans_ref.fa .
 
 !!! note "File Sizes"
     - What are the sizes of the container and the reference genome file?
