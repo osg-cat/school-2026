@@ -66,7 +66,7 @@ the following contents:
 		# Always use a specific tag like "4.10.3", never "latest"!
 		# The version referenced by "latest" can change, so the build will be 
 		# more stable when building from a specific version tag. 
-		FROM continuumio/miniconda3:4.10.3
+		FROM continuumio/miniconda3:26.3.2
 
 		# Use RUN to execute commands inside the image as it is being built up.
 		RUN conda install --yes numpy
@@ -83,22 +83,22 @@ the following contents:
 	the [Docker documentation](https://docs.docker.com/engine/reference/builder/) for more information. 
 
 1. Note that our container is starting from an existing container 
-`continuumio/miniconda3:4.10.3`. This container is produced by the `continuumio` 
-organization; the number `4.10.3` indicates the container version. When we create our 
+`continuumio/miniconda3:26.3.2`. This container is produced by the `continuumio` 
+organization; the number `26.3.2` indicates the container version. When we create our 
 new container, we will want to use a similar naming scheme of: 
 
 		USERNAME/CONTAINER:VERSIONTAG
 
 	In what follows, you will want to replace `USERNAME` with your DockerHub user name. 
 	The `CONTAINER` name and `VERSIONTAG` are your choice; in what follows, we will 
-	use `py3-numpy` as the container name and `2024-08` as the version tag. 
+	use `py3-numpy` as the container name and `2026-07` as the version tag. 
 
 1. To build and name the new container, open a command line window on your computer 
 where you can run Docker commands. Use the `cd` command to change your working directory 
 to the build directory with the `Dockerfile` inside. 
 
 		:::console
-		$ docker build -t USERNAME/py3-numpy:2024-08 .
+		$ docker build -t USERNAME/py3-numpy:2026-07 .
 		
 	Note the `.` at the end of the command! This indicates that we're using the current 
 	directory as our build environment, including the `Dockerfile` inside. 
@@ -116,7 +116,7 @@ elsewhere, it needs to be added to a **public** registry like Docker Hub.
 command line:
 
 		:::console
-		$ docker push USERNAME/py3-numpy:2024-08
+		$ docker push USERNAME/py3-numpy:2026-07
 
 	If the push doesn't work, you may need to run `docker login` first, enter your 
 	Docker Hub username and password and then try the push again. 
