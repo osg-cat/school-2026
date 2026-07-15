@@ -63,7 +63,7 @@ job produces it, and `transfer_output_remaps` will write it to OSDF for us.
 
 Considerations
 --------------
-- Why is `minimap2.sif` placed in the OSDF directory? Is it a big container?
+- Why is `minimap2.sif` placed in the OSDF directory?
 
 Create a wrapper script and submit the job
 ---------------------------------------
@@ -97,29 +97,30 @@ We need a wrapper script and a submit file that use OSDF for both the container 
         queue 1
 ```
 
-> [!IMPORTANT]
-> **Redirecting outputs to OSDF with `transfer_output_remaps`.**
-> By default, HTCondor returns every file listed in `transfer_output_files` to the directory you
-> submitted the job from on the Access Point. `transfer_output_remaps` lets you send individual
-> outputs somewhere else instead. Its syntax is a semicolon-separated list of `source = destination`
-> pairs:
->
-> ```
-> transfer_output_remaps = "<file_on_execution_point> = <destination> ; <another_file> = <destination>"
-> ```
->
-> The destination can be a new local path/filename *or* a URL. When the destination is an
-> `osdf://` URL, HTCondor uploads the file straight from the Execution Point into the OSDF-enabled
-> Object Store (the OSDF origin) — it never lands on the Access Point at all. As with input URLs,
-> there is no server name (three slashes in `:///`); the path is just the OSDF namespace
-> (`/ospool/ap40/data/[USERNAME]/` here).
->
-> In this job that means the freshly built `Celegans_ref.mmi` is written directly to your OSDF
-> directory. Because it now lives in OSDF, the ScalingUp mapping exercises can read it back through
-> the nearest cache with a plain `osdf:///ospool/ap40/data/[USERNAME]/Celegans_ref.mmi` in
-> `transfer_input_files`, keeping the large index off the Access Point and out of the OSPool network
-> path. (Remember the naming warning above: to overwrite the index later, give it a new versioned
-> name so caches don't serve a stale copy.)
+
+!!! info "Redirecting outputs to OSDF with transfer_output_remaps"
+
+    By default, HTCondor returns every file listed in `transfer_output_files` to the directory you
+    submitted the job from on the Access Point. `transfer_output_remaps` lets you send individual
+    outputs somewhere else instead. Its syntax is a semicolon-separated list of `source = destination`
+    pairs:
+
+    ```
+    transfer_output_remaps = "<file_on_execution_point> = <destination> ; <another_file> = <destination>"
+    ```
+
+    The destination can be a new local path/filename *or* a URL. When the destination is an
+    `osdf://` URL, HTCondor uploads the file straight from the Execution Point into the OSDF-enabled
+    Object Store (the OSDF origin) — it never lands on the Access Point at all. As with input URLs,
+    there is no server name (three slashes in `:///`); the path is just the OSDF namespace
+    (`/ospool/ap40/data/[USERNAME]/` here).
+
+    In this job that means the freshly built `Celegans_ref.mmi` is written directly to your OSDF
+    directory. Because it now lives in OSDF, the ScalingUp mapping exercises can read it back through
+    the nearest cache with a plain `osdf:///ospool/ap40/data/[USERNAME]/Celegans_ref.mmi` in
+    `transfer_input_files`, keeping the large index off the Access Point and out of the OSPool network
+    path. (Remember the naming warning above: to overwrite the index later, give it a new versioned
+    name so caches don't serve a stale copy.)
 
 3. Submit your `minimap2_index.sub` job to the OSPool:
 

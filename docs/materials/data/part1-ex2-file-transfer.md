@@ -81,7 +81,7 @@ For this version of the job, let's compress our blast database files to send the
 
 2. Create a wrapper script that will first decompress the `pdbaa_files.tar.gz` file, and then run blast.
 
-    Because this file will now be our new `executable` in the submit file, we'll also end up transferring the `blastx` executable
+    Because this file will now be our new `executable` in the submit file, we'll also end up transferring the `blastx` executable binary file
     with `transfer_input_files`.
     In the `blast-data` directory, create a new file, called `blast_wrapper.sh`, with the following contents:
 
@@ -150,28 +150,36 @@ It should take a few minutes to complete, and then you can check to make sure th
 Run a **`du -sh`** on the directory with this job's input.
 How does it compare to the directory from Software exercise ([1.1](../software/part4-ex1-download.md)), and why?
 
+!!! question "Stop and Think!"
+    Notice which files were transferred back to the Access Point. Why do you think this is? Consider what files were created on the execute point, and which files were transferred back to the Access Point. How does this relate to the `transfer_input_files` and `transfer_output_files` submit file attributes?
+    Also consider how our job's disk usage compares to the requested amount by reviewing the `test.log` file. Are the requested amounts reasonable? If not, what would you change? How do you think this would affect the throughput on the system?
+
+
 transfer\_output\_files
 -----------------------
 
 So far, we have used HTCondor's new file detection to transfer back
-the newly created files. An alternative is to be explicit, using the
-`transfer_output_files` attribute in the submit file. The upside to this
-approach is that you can pick to only transfer back a subset of the
-created files. The downside is that you have to know which files are
-created.
+the newly created files. In our previous submission, we received back
+our `pdbaa*` files, as these were extracted on the EPs top-level directory
+and considered new/changed compared to the AP's submit directory. An alternative 
+is to be explicit, using the `transfer_output_files` attribute in the submit file.
+The upside to this approach is that you can pick to only transfer back a subset of the
+created files. The downside is that you have to know which files are created.
 
-The first exercise is to modify the submit file from the previous
+Modify the submit file from the previous
 example, and add a line like (remember, before the `queue`):
 
     :::file
     transfer_output_files = mouse.fa.result
 
-You may also remove the last line in the `blast_wrapper.sh`, the
-`rm pdbaa.*` as extra files are no longer an issue - those files
-will be ignored because we used `transfer_output_files`.
+In your `blast-data` directory, remove the following files,
 
-Submit the job, and make sure everything works. Did you get
-any `pdbaa.*` files back?
+``` hl_lines="1"
+$ rm pdbaa.00.* pdbaa.pal test.* mouse.fa.result 
+```
+
+Submit the job again, and make sure everything works. Did you get
+any `pdbaa.*` files back? What files did you get back? How does this compare to the previous submission?
 
 The next thing we should try is to see what happens if the
 file we specify does not exist. Modify your submit file,
@@ -224,6 +232,9 @@ quotes around it.
 Submit the job, and wait for it to complete. Are there
 any errors? Can you find mouse.fa.result?
 
+!!! tip "Renaming outputs on the fly!"
+    The `transfer_output_remaps` attribute is very useful for renaming outputs on the fly. A common use-case is if you have a script that runs multiple times but always produces the same output filename, you can use `transfer_output_remaps` to rename the output file to something unique for each run. For example, let's say your `blast_wrapper.sh` script always produces a file called `results.dat` but you ran it for a mouse, horse, and elephant query sequence. If you run this script multiple times, each run will overwrite the previous `results.dat` file. To avoid this, you can use `transfer_output_remaps` to rename the output file to something unique for each run (such as the species or another job-specific variable in your submit file).
+
 ### Exercise: Build Your Own Submit File
 
 You've now assembled every piece of this job's submit file. Fill in the blanks below to
@@ -231,8 +242,6 @@ match the steps above, then check your work. Your `request_memory` and `request_
 values are judgment calls, so there's no single right number for those.
 
 --8<-- "files/part1-ex2-file-transfer-submit-file.html"
-
-
 
 
 Conclusions

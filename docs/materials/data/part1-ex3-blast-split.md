@@ -80,9 +80,9 @@ Follow the below steps:
 2. Replace the `mouse.fa` instances in the submit file with `$(inputfile)`, and rename the output, log, and error files
    to use the same `inputfile` variable:
 
-        output = $(inputfile).out
-        error = $(inputfile).err
-        log = $(inputfile).log
+        output = logs/$(inputfile).out
+        error = logs/$(inputfile).err
+        log = logs/split_blast.log
 
 3. Add an `arguments` line to the submit file so it will pass the name of the input file to the wrapper script
 
@@ -93,6 +93,9 @@ Follow the below steps:
         transfer_input_files = ... , $(inputfile)
 
 5. Remove or comment out `transfer_output_files` and `transfer_output_remaps`.
+
+    transfer_output_files = $(inputfile).result
+    transfer_output_remaps = "$(inputfile).result = science_results/$(inputfile).result"
 
 6. Update the memory and disk requests, since the new input file is larger and will also produce larger output.
    It may be best to overestimate to something like 1 GB for each.

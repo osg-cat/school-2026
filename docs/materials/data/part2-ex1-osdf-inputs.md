@@ -35,8 +35,6 @@ Setup
 user@ap40 $ osdf object get /osg-public/school/2026/blast.sif .
 ```  
 
-.. TODO: Add a short recipe for creating a container from the `blastx` binaries, so that users can create their own containers if they want to.
-
 Place the Database and Container in OSDF
 ----------------------------------------
 

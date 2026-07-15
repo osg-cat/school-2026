@@ -37,6 +37,7 @@ genome information.
         :::console
         user@ap40 $ osdf object get /osg-public/school/2026/ncbi-blast-2.16.0+-x64-linux.tar.gz ./
         user@ap40 $ tar -xzvf ncbi-blast-2.16.0+-x64-linux.tar.gz
+        user@ap40 $ mv ncbi-blast-2.16.0+/bin/blastx ./
 
 1.  Download these files to your current directory:
 
@@ -55,7 +56,7 @@ Understanding BLAST
 Remember that `blastx` is executed in a command like the following:
 
 ``` console
-user@ap40 $ ./ncbi-blast-2.16.0+/bin/blastx -db <DATABASE ROOTNAME> -query <INPUT FILE> -out <RESULTS FILE>
+user@ap40 $ ./blastx -db <DATABASE ROOTNAME> -query <INPUT FILE> -out <RESULTS FILE>
 ```
 
 In the above, the `<INPUT FILE>` is the name of a file containing a number of genetic sequences (e.g. `mouse.fa`), and
@@ -104,8 +105,6 @@ Using the commands that you have learned so far, you should be able to get an id
 ### Intermediate and Output requirements
 
 You also need to get an idea about the intermediate and output file sizes as well to estimate the total disk requirement. To sum the output file sizes, estimate the file sizes of the following files
-
-.. TODO: Add conceptual figure showing the input, intermediate, and output files for a blastx job.
 
 - The output that we care about from `blastx` is saved in the file whose name is indicated after the `-out` argument to `blastx`.
 - Also, remember that HTCondor also creates the error, output, and log files, which you'll need to add up, too.
