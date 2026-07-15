@@ -90,12 +90,12 @@ Follow the below steps:
 
 4. Add the `$(inputfile)` to the end of your list of `transfer_input_files`:
 
-        transfer_input_files = ... , $(inputfile)
+        transfer_input_files = blastx, pdbaa_files.tar.gz, $(inputfile) 
 
 5. Remove or comment out `transfer_output_files` and `transfer_output_remaps`.
 
-    transfer_output_files = $(inputfile).result
-    transfer_output_remaps = "$(inputfile).result = science_results/$(inputfile).result"
+        transfer_output_files = $(inputfile).result
+        transfer_output_remaps = "$(inputfile).result = science_results/$(inputfile).result"
 
 6. Update the memory and disk requests, since the new input file is larger and will also produce larger output.
    It may be best to overestimate to something like 1 GB for each.
