@@ -279,7 +279,7 @@ All School participants and staff are encourage to attend!
         <div style="margin-left: 2ex;"><a href="../materials/showcase/files/iross-osgus26-agents.pdf">Best Practices for Programming with AI</a></div>
         &#9654; <span style="color: rgb(173, 81, 12);">Spencer Ericksen</span>;
         Small Molecule Screening Facility<br>
-        <!--<div style="margin-left: 2ex;"><a href="../materials/showcase/martinez_osgschool.pdf">“Dark Matter, Radio Astronomy, and High Throughput Computing”</a></div>-->
+        <div style="margin-left: 2ex;"><a href="../materials/showcase/files/ericksen.pdf">"Scaling Virtual Screening to Ultra-Large Virtual Chemical Libraries"</a></div>
       </td>
       <td>-</td>
     </tr>
